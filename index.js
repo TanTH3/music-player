@@ -264,6 +264,19 @@ const app = {
             }
         }
 
+        // lắng nghe nút space, right, left
+        document.onkeydown = function(e){
+            if(e.keyCode == 32){
+                playBtn.click();
+            }
+            if(e.keyCode == 37){
+                prevBtn.click();
+            }
+            if(e.keyCode == 39){
+                nextBtn.click();
+            } 
+        }
+
     },
     loadCurrentSong: function(){
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
