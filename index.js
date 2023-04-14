@@ -95,7 +95,43 @@ const app = {
         singer: "Imagine Dragons",
         path: "./assets/music/song12.mp3",
         image: "./assets/img/pic12.jpg",
-        }
+        },
+        {
+        name: "BO XÌ BO",
+        singer: "Hoàng Thuỳ Linh",
+        path: "./assets/music/song13.mp3",
+        image: "./assets/img/pic13.jpg",
+        },
+        {
+        name: "Lily",
+        singer: "Selena Gomez, Marshmello, David Guetta",
+        path: "./assets/music/song14.mp3",
+        image: "./assets/img/pic14.jpg",
+        },
+        {
+        name: "Thị Mầu",
+        singer: "Hòa Minzy x Masew",
+        path: "./assets/music/song15.mp3",
+        image: "./assets/img/pic15.jpg",
+        },
+        {
+        name: "Bán bánh mì",
+        singer: "PHÚC DU",
+        path: "./assets/music/song16.mp3",
+        image: "./assets/img/pic16.jpg",
+        },
+        {
+        name: "Cứ Chill Thôi",
+        singer: "Chillies ft Suni Hạ Linh & Rhymastic",
+        path: "./assets/music/song17.mp3",
+        image: "./assets/img/pic17.jpg",
+        },
+        {
+        name: "MUỘN RỒI MÀ SAO CÒN",
+        singer: "SƠN TÙNG M-TP",
+        path: "./assets/music/song18.mp3",
+        image: "./assets/img/pic18.jpg",
+        },
     
     ],
 
