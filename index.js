@@ -61,6 +61,94 @@ const app = {
             path: "./assets/music/song3.mp3",
             image: "./assets/img/pic3.jpg",
         },
+        {
+            name: "Alone",
+            singer: "Alan Walker",
+            path: "./assets/music/song6.mp3",
+            image: "./assets/img/pic6.jpg",
+        },
+        {
+            name: "BO XÌ BO",
+            singer: "Hoàng Thuỳ Linh",
+            path: "./assets/music/song13.mp3",
+            image: "./assets/img/pic13.jpg",
+        },
+        {
+            name: "Way Back Home",
+            singer: "SHAUN feat. Conor Maynard",
+            path: "./assets/music/song8.mp3",
+            image: "./assets/img/pic8.jpg",
+        },
+        {
+            name: "Thị Mầu",
+            singer: "Hòa Minzy x Masew",
+            path: "./assets/music/song15.mp3",
+            image: "./assets/img/pic15.jpg",
+        },
+        {
+            name: "Dance Monkey",
+            singer: "Tones and I",
+            path: "./assets/music/song9.mp3",
+            image: "./assets/img/pic9.jpg",
+        },
+        {
+            name: "Cứ Chill Thôi",
+            singer: "Chillies ft Suni Hạ Linh & Rhymastic",
+            path: "./assets/music/song17.mp3",
+            image: "./assets/img/pic17.jpg",
+        },
+        {
+            name: "Beliver",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song10.mp3",
+            image: "./assets/img/pic10.jpg",
+        },
+        {
+            name: "Thunder",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song11.mp3",
+            image: "./assets/img/pic11.jpg",
+        },
+        {
+            name: "Bones",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song12.mp3",
+            image: "./assets/img/pic12.jpg",
+        },
+
+        {
+            name: "Lily",
+            singer: "Selena Gomez, Marshmello, David Guetta",
+            path: "./assets/music/song14.mp3",
+            image: "./assets/img/pic14.jpg",
+        },
+
+        {
+            name: "Bán bánh mì",
+            singer: "PHÚC DU",
+            path: "./assets/music/song16.mp3",
+            image: "./assets/img/pic16.jpg",
+        },
+
+        {
+            name: "MUỘN RỒI MÀ SAO CÒN",
+            singer: "SƠN TÙNG M-TP",
+            path: "./assets/music/song18.mp3",
+            image: "./assets/img/pic18.jpg",
+        },
+        {
+            name: "Beliver",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song19.mp3",
+            image: "./assets/img/pic19.jpg",
+        },
+        {
+            name: "Thunder",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song20.mp3",
+            image: "./assets/img/pic20.jpg",
+        }
+
     ],
     songMonday: [
         {
