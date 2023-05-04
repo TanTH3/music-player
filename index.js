@@ -456,7 +456,7 @@ const app = {
     },
 
     activeBtn: function (e) {
-        var i = Number.parseInt(e) || 0;
+        var i = Number.parseInt(e);
         switch (i) {
             case 0:
                 this.songs = this.songMonday
