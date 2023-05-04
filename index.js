@@ -6,7 +6,7 @@ const playlist = $('.playlist');
 const cd = $('.cd');
 const heading = $('header h2');
 const cdThumb = $('.cd-thumb');
-const audio = $('#audio') 
+const audio = $('#audio');
 const playBtn = $('.btn-toggle-play')
 const player = $('.player')
 const progress = $('#progress');
@@ -14,131 +14,198 @@ const nextBtn = $('.btn-next');
 const prevBtn = $('.btn-prev');
 const randomBtn = $('.btn-random');
 const repeatBtn = $('.btn-repeat');
+const listSongs = $('.list-songs');
 const song = $('.song');
-console.log(song);
+console.log(listSongs);
 var listIndex = [];
 const app = {
+    dayIndex: 0,
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
-
     songs: [
         {
-        name: "Nevada",
-        singer: " Vicetone feat Cozi Zuehlsdorff",
-        path: "./assets/music/song1.mp3",
-        image: "./assets/img/pic1.jpg",
+            name: "Nevada",
+            singer: " Vicetone feat Cozi Zuehlsdorff",
+            path: "./assets/music/song1.mp3",
+            image: "./assets/img/pic1.jpg",
         },
         {
-        name: "Mặt mộc",
-        singer: "Phạm Nguyên Ngọc x VAnh x Ân Nhi",
-        path: "./assets/music/song2.mp3",
-        image: "./assets/img/pic2.jpg",
+            name: "Mặt mộc",
+            singer: "Phạm Nguyên Ngọc x VAnh x Ân Nhi",
+            path: "./assets/music/song2.mp3",
+            image: "./assets/img/pic2.jpg",
         },
         {
-        name: "See tình",
-        singer: "Hoàng Thùy Linh",
-        path:"./assets/music/song3.mp3",
-        image: "./assets/img/pic3.jpg",
+            name: "Monsters",
+            singer: "Katie Sky",
+            path: "./assets/music/song5.mp3",
+            image: "./assets/img/pic5.jpg",
         },
         {
-        name: "Summertime",
-        singer: "Cinnamons x Evening Cinema",
-        path: "./assets/music/song4.mp3",
-        image:"./assets/img/pic4.jpg",
+            name: "Độ tộc 2",
+            singer: "MASEW x PHÚC DU x PHÁO x ĐỘ MIXI",
+            path: "./assets/music/song7.mp3",
+            image: "./assets/img/pic7.jpg",
         },
         {
-        name: "Monsters",
-        singer: "Katie Sky",
-        path: "./assets/music/song5.mp3",
-        image: "./assets/img/pic5.jpg",
+            name: "Summertime",
+            singer: "Cinnamons x Evening Cinema",
+            path: "./assets/music/song4.mp3",
+            image: "./assets/img/pic4.jpg",
         },
         {
-        name: "Alone",
-        singer: "Alan Walker",
-        path: "./assets/music/song6.mp3",
-        image: "./assets/img/pic6.jpg",    
+            name: "See tình",
+            singer: "Hoàng Thùy Linh",
+            path: "./assets/music/song3.mp3",
+            image: "./assets/img/pic3.jpg",
+        },
+    ],
+    songMonday: [
+        {
+            name: "Nevada",
+            singer: " Vicetone feat Cozi Zuehlsdorff",
+            path: "./assets/music/song1.mp3",
+            image: "./assets/img/pic1.jpg",
         },
         {
-        name: "Độ tộc 2",
-        singer: "MASEW x PHÚC DU x PHÁO x ĐỘ MIXI",
-        path: "./assets/music/song7.mp3",
-        image:"./assets/img/pic7.jpg",
+            name: "Mặt mộc",
+            singer: "Phạm Nguyên Ngọc x VAnh x Ân Nhi",
+            path: "./assets/music/song2.mp3",
+            image: "./assets/img/pic2.jpg",
         },
         {
-        name: "Way Back Home",
-        singer: "SHAUN feat. Conor Maynard",
-        path: "./assets/music/song8.mp3",
-        image:"./assets/img/pic8.jpg",       
+            name: "Monsters",
+            singer: "Katie Sky",
+            path: "./assets/music/song5.mp3",
+            image: "./assets/img/pic5.jpg",
         },
         {
-        name: "Dance Monkey",
-        singer: "Tones and I",
-        path: "./assets/music/song9.mp3",
-        image: "./assets/img/pic9.jpg",
+            name: "Độ tộc 2",
+            singer: "MASEW x PHÚC DU x PHÁO x ĐỘ MIXI",
+            path: "./assets/music/song7.mp3",
+            image: "./assets/img/pic7.jpg",
         },
         {
-        name: "Beliver",
-        singer: "Imagine Dragons",
-        path: "./assets/music/song10.mp3",
-        image: "./assets/img/pic10.jpg",
+            name: "Summertime",
+            singer: "Cinnamons x Evening Cinema",
+            path: "./assets/music/song4.mp3",
+            image: "./assets/img/pic4.jpg",
         },
         {
-        name: "Thunder",
-        singer: "Imagine Dragons",
-        path: "./assets/music/song11.mp3",
-        image:"./assets/img/pic11.jpg",
+            name: "See tình",
+            singer: "Hoàng Thùy Linh",
+            path: "./assets/music/song3.mp3",
+            image: "./assets/img/pic3.jpg",
+        },
+    ],
+    songTuesday: [
+        {
+            name: "Alone",
+            singer: "Alan Walker",
+            path: "./assets/music/song6.mp3",
+            image: "./assets/img/pic6.jpg",
         },
         {
-        name: "Bones",
-        singer: "Imagine Dragons",
-        path: "./assets/music/song12.mp3",
-        image: "./assets/img/pic12.jpg",
+            name: "BO XÌ BO",
+            singer: "Hoàng Thuỳ Linh",
+            path: "./assets/music/song13.mp3",
+            image: "./assets/img/pic13.jpg",
         },
         {
-        name: "BO XÌ BO",
-        singer: "Hoàng Thuỳ Linh",
-        path: "./assets/music/song13.mp3",
-        image: "./assets/img/pic13.jpg",
+            name: "Way Back Home",
+            singer: "SHAUN feat. Conor Maynard",
+            path: "./assets/music/song8.mp3",
+            image: "./assets/img/pic8.jpg",
         },
         {
-        name: "Lily",
-        singer: "Selena Gomez, Marshmello, David Guetta",
-        path: "./assets/music/song14.mp3",
-        image: "./assets/img/pic14.jpg",
+            name: "Thị Mầu",
+            singer: "Hòa Minzy x Masew",
+            path: "./assets/music/song15.mp3",
+            image: "./assets/img/pic15.jpg",
         },
         {
-        name: "Thị Mầu",
-        singer: "Hòa Minzy x Masew",
-        path: "./assets/music/song15.mp3",
-        image: "./assets/img/pic15.jpg",
+            name: "Dance Monkey",
+            singer: "Tones and I",
+            path: "./assets/music/song9.mp3",
+            image: "./assets/img/pic9.jpg",
         },
         {
-        name: "Bán bánh mì",
-        singer: "PHÚC DU",
-        path: "./assets/music/song16.mp3",
-        image: "./assets/img/pic16.jpg",
+            name: "Cứ Chill Thôi",
+            singer: "Chillies ft Suni Hạ Linh & Rhymastic",
+            path: "./assets/music/song17.mp3",
+            image: "./assets/img/pic17.jpg",
+        },
+    ],
+    songWednesday: [
+        {
+            name: "Beliver",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song10.mp3",
+            image: "./assets/img/pic10.jpg",
         },
         {
-        name: "Cứ Chill Thôi",
-        singer: "Chillies ft Suni Hạ Linh & Rhymastic",
-        path: "./assets/music/song17.mp3",
-        image: "./assets/img/pic17.jpg",
+            name: "Thunder",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song11.mp3",
+            image: "./assets/img/pic11.jpg",
         },
         {
-        name: "MUỘN RỒI MÀ SAO CÒN",
-        singer: "SƠN TÙNG M-TP",
-        path: "./assets/music/song18.mp3",
-        image: "./assets/img/pic18.jpg",
+            name: "Bones",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song12.mp3",
+            image: "./assets/img/pic12.jpg",
         },
-    
+
+        {
+            name: "Lily",
+            singer: "Selena Gomez, Marshmello, David Guetta",
+            path: "./assets/music/song14.mp3",
+            image: "./assets/img/pic14.jpg",
+        },
+
+        {
+            name: "Bán bánh mì",
+            singer: "PHÚC DU",
+            path: "./assets/music/song16.mp3",
+            image: "./assets/img/pic16.jpg",
+        },
+
+        {
+            name: "MUỘN RỒI MÀ SAO CÒN",
+            singer: "SƠN TÙNG M-TP",
+            path: "./assets/music/song18.mp3",
+            image: "./assets/img/pic18.jpg",
+        },
+
+    ],
+    songThursday: [
+        {
+            name: "Beliver",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song19.mp3",
+            image: "./assets/img/pic19.jpg",
+        },
+        {
+            name: "Thunder",
+            singer: "Imagine Dragons",
+            path: "./assets/music/song20.mp3",
+            image: "./assets/img/pic20.jpg",
+        }
     ],
 
-    render: function(){
+    days: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+    ],
+
+    render: function () {
         const htmls = this.songs.map((song, index) => {
             return `
-                <div class="song ${index == this.currentIndex? 'active' : ''}" data-index="${index}">
+                <div class="song ${index == this.currentIndex ? 'active' : ''}" data-index="${index}">
                     <div class="thumb" style="background-image: url('${song.image}')"></div>
                     <div class="body">
                         <h3 class="title">${song.name}</h3>
@@ -150,112 +217,119 @@ const app = {
                 </div>
                 `
         })
+
+        const html = this.days.map((day, index) => {
+            return ` <span class="list-song ${index == this.dayIndex ? 'active' : ''}" $ data-index="${index}" >${day}</span>`
+        })
+
         $('.playlist').innerHTML = htmls.join('');
+        $('.list-songs').innerHTML = html.join('');
     },
-    defineProperties: function(){
+    defineProperties: function () {
         Object.defineProperty(this, 'currentSong', {
-            get: function(){
+            get: function () {
                 return this.songs[this.currentIndex]
-            }})
+            }
+        })
     },
-    handleEvents: function(){
+    handleEvents: function () {
         var _this = this;
         const cdWidth = cd.offsetWidth;
 
-    
+
         // xu li cd quay vong
         const cdThumbAnimate = cdThumb.animate([
-            {transform : 'rotate(360deg)'}
-         ],{
+            { transform: 'rotate(360deg)' }
+        ], {
             duration: 30000,
-            iteration: Infinity ,
-         })
-         cdThumbAnimate.pause();
+            iteration: Infinity,
+        })
+        cdThumbAnimate.pause();
         //xu li phong to
-        document.onscroll = function(){
+        document.onscroll = function () {
             const scrollTop = window.scrollY || document.documentElement.scrollTop
             const newCdWidth = cdWidth - scrollTop
             cd.style.width = newCdWidth > 0 ? newCdWidth + 'px' : 0;
-            cd.style.opacity = newCdWidth/cdWidth;
+            cd.style.opacity = newCdWidth / cdWidth;
         }
 
         //xu li play
-        playBtn.onclick = function(){
+        playBtn.onclick = function () {
             _this.render();
-            if(_this.isPlaying){
+            if (_this.isPlaying) {
                 audio.pause();
-            }else{
+            } else {
                 audio.play();
-            _this.scrollToActiveSong(); 
+                _this.scrollToActiveSong();
             }
         }
 
         //khi play
-        audio.onplay = function(){
+        audio.onplay = function () {
             _this.isPlaying = true;
             player.classList.add('playing')
             cdThumbAnimate.play();
         }
         // khi pause
-        audio.onpause = function(){
+        audio.onpause = function () {
             _this.isPlaying = false;
             player.classList.remove('playing')
             cdThumbAnimate.pause();
         }
         // khi tien do bai hat thay doi
-        audio.ontimeupdate = function(){
+        audio.ontimeupdate = function () {
             const currentTimeLine = audio.currentTime / audio.duration * 100;
-            progress.value = currentTimeLine ;
-            
+            progress.value = currentTimeLine;
+
         }
         // tu dong chuyen bai
-        audio.onended = function(){
+        audio.onended = function () {
             return _this.isRepeat ? audio.play() : nextBtn.click();
         }
         // khi tua bai hat 
-        progress.onchange = function(){
+        progress.onchange = function () {
             const seek = progress.value * audio.duration / 100;
-            audio.currentTime = seek ;
+            audio.currentTime = seek;
         }
         // khi next bai hat 
-        nextBtn.onclick = function(){
+        nextBtn.onclick = function () {
             cdThumbAnimate.play();
-            if(_this.isRandom){
+            if (_this.isRandom) {
                 _this.nextSongRandom();
-            }else{
+            } else {
                 _this.nextSong();
             }
         }
-         // khi prev bai hat 
-        prevBtn.onclick = function(){
+        // khi prev bai hat 
+        prevBtn.onclick = function () {
             cdThumbAnimate.play();
-            if(_this.isRandom){
+            if (_this.isRandom) {
                 _this.prevSongRandom();
-            }else{
-                _this.prevSong();   
+            } else {
+                _this.prevSong();
             }
         }
         // khi random bai hat
-        randomBtn.onclick = function(e){
-            if(_this.isRandom){
+        randomBtn.onclick = function (e) {
+            if (_this.isRandom) {
                 _this.isRandom = false;
                 randomBtn.classList.remove("active");
-            }else {
+            } else {
                 _this.isRandom = true;
                 randomBtn.classList.add("active");
             }
         }
         // khi repeat bai hat
-        repeatBtn.onclick = function(){
+        repeatBtn.onclick = function () {
             _this.isRepeat = !_this.isRepeat;
             repeatBtn.classList.toggle("active", _this.isRepeat);
         }
 
         //lang nghe click vao playlist
-        playlist.onclick = function(e){
+        playlist.onclick = function (e) {
             const songNode = e.target.closest('.song:not(.active)')
-            if(songNode || e.target.closest('.option')){
-                if(songNode){
+            if (songNode || e.target.closest('.option')) {
+                if (songNode) {
                     _this.currentIndex = Number(songNode.dataset.index);
                     _this.loadCurrentSong();
                     _this.render()
@@ -264,79 +338,72 @@ const app = {
             }
         }
 
-        // lắng nghe nút space, right, left
-        document.onkeydown = function(e){
-            if(e.keyCode == 32){
-                playBtn.click();
-            }
-            if(e.keyCode == 37){
-                prevBtn.click();
-            }
-            if(e.keyCode == 39){
-                nextBtn.click();
-            } 
+        listSongs.onclick = function (e) {
+            const dayOnWeek = e.target.dataset.index
+            _this.dayIndex = dayOnWeek
+            _this.render();
+            _this.activeBtn(dayOnWeek);
         }
 
+        // lắng nghe nút space, right, left
+        document.onkeydown = function (e) {
+            if (e.keyCode == 32) {
+                playBtn.click();
+            }
+            if (e.keyCode == 37) {
+                prevBtn.click();
+            }
+            if (e.keyCode == 39) {
+                nextBtn.click();
+            }
+        }
+
+
+
     },
-    loadCurrentSong: function(){
+    loadCurrentSong: function () {
         cdThumb.style.backgroundImage = `url('${this.currentSong.image}')`;
         heading.textContent = this.currentSong.name;
         audio.src = this.currentSong.path;
     },
-    // listIndexRandom: function(){
-    //     var listIndex = [];
-    //     var randomIndex;
-    //     isSameIndex = false;
-    //     for (var i=0; i<this.songs.length; i++){
-    //         do{
-    //             randomIndex = Math.floor(Math.random() * this.songs.length)
-    //                 for (var j=0 ; j<listIndex.length ; j++){
-    //                     if(listIndex[j] == randomIndex){
-    //                         isSameIndex = true;
-    //                         break;
-    //                     }else{
-    //                         isSameIndex = false;
-    //                     }}
-    //         }while (isSameIndex);
-    //         listIndex.push(randomIndex)
-    //     }  
-    //     return listIndex;
-    // },
-    // nextSongRandom : function(listIndex){
-    //     if(listIndex.length<= 0){
-    //         randomBtn.click();
-    //         randomBtn.click();
-    //         setTimeout(function(){
-    //             nextBtn.click();
-    //         },1);
-    //     }
-    //     var n = listIndex.pop();
-    //     this.currentIndex = n;
-    //     this.loadCurrentSong();
-    //     this.render();
-    //     this.scrollToActiveSong();
-    //     audio.play();
-    //     console.log(listIndex.length,n)
-    // },
-     
 
-    nextSongRandom : function(){
+    activeBtn: function (e) {
+        var i = Number.parseInt(e) || 0;
+        switch (i) {
+            case 0:
+                this.songs = this.songMonday
+                break;
+            case 1:
+                this.songs = this.songTuesday
+                break;
+            case 2:
+                this.songs = this.songWednesday
+                break;
+            case 3:
+                this.songs = this.songThursday
+                break;
+        }
+        this.render();
+        console.log(e, this.songs, this.songMonday, this.songTuesday)
+    },
+    nextSongRandom: function () {
         var randomIndex;
         isSameIndex = false;
-        do{
+        do {
             randomIndex = Math.floor(Math.random() * this.songs.length)
-                    for (var j=0 ; j<listIndex.length ; j++){
-                        if(listIndex[j] == randomIndex){
-                            isSameIndex = true;
-                            break;
-                        }else{
-                            isSameIndex = false;
-                        }}
-        }while (isSameIndex);
+            for (var j = 0; j < listIndex.length; j++) {
+                if (listIndex[j] == randomIndex) {
+                    isSameIndex = true;
+                    break;
+                } else {
+                    isSameIndex = false;
+                }
+            }
+        } while (isSameIndex);
         this.currentIndex = randomIndex;
         listIndex.push(randomIndex)
         console.log(randomIndex, listIndex)
-        if (listIndex.length >= this.songs.length){
+        if (listIndex.length >= this.songs.length) {
             listIndex.length = 0
         }
         this.loadCurrentSong();
@@ -344,7 +411,7 @@ const app = {
         this.scrollToActiveSong();
         audio.play();
     },
-    prevSongRandom : function(){
+    prevSongRandom: function () {
         this.currentIndex = listIndex[listIndex.length - 2]
         listIndex.pop();
         console.log(listIndex)
@@ -353,16 +420,16 @@ const app = {
         this.scrollToActiveSong();
         audio.play();
     },
-    scrollToActiveSong: function(){
+    scrollToActiveSong: function () {
         var activeSong = $('.song.active');
         activeSong.scrollIntoView({
             behavior: 'smooth',
-            block:'center'
+            block: 'center'
         });
     },
-    nextSong: function(){
+    nextSong: function () {
         this.currentIndex++;
-        if(this.currentIndex >= this.songs.length){
+        if (this.currentIndex >= this.songs.length) {
             this.currentIndex = 0;
         }
         this.loadCurrentSong()
@@ -370,11 +437,11 @@ const app = {
         this.render();
         this.scrollToActiveSong();
     },
-    
 
-    prevSong: function(){
+
+    prevSong: function () {
         this.currentIndex--;
-        if(this.currentIndex < 0){
+        if (this.currentIndex < 0) {
             this.currentIndex = this.songs.length;
         }
         this.loadCurrentSong()
@@ -383,7 +450,7 @@ const app = {
         audio.play();
     },
 
-    start: function(){
+    start: function () {
         // đingj nghĩa các thuọc tính
         this.defineProperties()
         //lắng nghe/ xử lí các sự kiện
@@ -392,8 +459,8 @@ const app = {
         this.loadCurrentSong()
         //render playlist
         this.render()
-        
-        
+
+
     },
 
 }

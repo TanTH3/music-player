@@ -18,6 +18,8 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+
+
 .player {
   position: relative;
   max-width: 480px;
@@ -50,6 +52,28 @@ html {
 header {
   text-align: center;
   margin-bottom: 10px;
+}
+
+header .list-songs {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+header .list-song.active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+header .list-song {
+  display: block;
+  justify-content: space-around;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: #333;
+  font-size: 14px;
+  padding: 2px 5px;
+  cursor: pointer;
 }
 
 header h4 {
@@ -111,7 +135,6 @@ header h2 {
 
 .progress {
   width: 100%;
-  -webkit-appearance: none;
   height: 6px;
   background: #d3d3d3;
   outline: none;
@@ -131,7 +154,7 @@ header h2 {
 
 /* PLAYLIST */
 .playlist {
-  margin-top: 408px;
+  margin-top: 436px;
   padding: 12px;
 }
 
